@@ -6448,7 +6448,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGenerator
   cameraController: {fileID: 1491335975}
-  chunkPrefab: {fileID: 6357923590967157040, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
+  chunkPrefabs:
+  - {fileID: 6357923590967157040, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
+  - {fileID: 1404587755097251017, guid: bdbb602930cdb914b895ca605d0d3116, type: 3}
+  - {fileID: 1404587755097251017, guid: 596edd7a8982c9144b3cb2d19d25ba3d, type: 3}
+  - {fileID: 1404587755097251017, guid: 420a5b30b0db20044be803e234144db2, type: 3}
+  checkpointChunk: {fileID: 1404587755097251017, guid: 2babb2dea8a99ac4d8c36bffb762d0cb, type: 3}
   chunkParent: {fileID: 1852845736}
   scoreManager: {fileID: 670396588}
   startingChunksAmount: 12
@@ -6456,6 +6461,7 @@ MonoBehaviour:
   moveSpeed: 8
   minMoveSpeed: 2
   maxMoveSpeed: 15
+  checkpointCount: 8
 --- !u!4 &1859817682
 Transform:
   m_ObjectHideFlags: 0
