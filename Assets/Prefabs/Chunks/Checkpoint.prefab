@@ -512,6 +512,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4123521461964970169, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
+      propertyPath: coinSpawnChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4123521461964970169, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
+      propertyPath: appleSpawnChance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4893165891054436754, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -556,8 +564,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6357923590967157040, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
+      propertyPath: m_TagString
+      value: Checkpoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4845979079870781551, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
+    - {fileID: 500853562802239545, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4893165891054436754, guid: 34881553c5586fd408445d243ecc1c8f, type: 3}
       insertIndex: -1

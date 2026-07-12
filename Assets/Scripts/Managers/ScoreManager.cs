@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
         if(gameManager.gameOver) return;
         
         score += amount;
-        text.text = score.ToString();
+        text.text = "Score : " + score.ToString();
         
     }
 }

@@ -1,6 +1,7 @@
+using System.Collections; // Required for Coroutines / IEnumerator
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,24 +9,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text timeText;
     [SerializeField] GameObject gameOverText;
     [SerializeField] float startTime = 5f;
+    [SerializeField] float restartTime = 2f;
 
     float timeLeft;
     bool GameOver = false;
 
     public float TimeLeft
     {
-        get {return timeLeft;}
-        set {timeLeft = value;}
+        get { return timeLeft; }
+        set { timeLeft = value; }
     }
 
     public bool gameOver
     {
-        get {return GameOver;}
-        set {GameOver = value;}
+        get { return GameOver; }
+        set { GameOver = value; }
     }
 
     void Start()
     {
+        Time.timeScale = 1f; 
         timeLeft = startTime;
     }
 
@@ -45,15 +48,30 @@ public class GameManager : MonoBehaviour
 
         timeLeft -= Time.deltaTime;
         timeText.text = timeLeft.ToString("F1");
-
-
     }
 
     void playerGameOver()
     {
+        
+        if (GameOver) return; 
+
         GameOver = true;
         playerController.enabled = false;
         gameOverText.SetActive(true);
-        Time.timeScale = 0.1f;
+        
+        Time.timeScale = 0.1f; 
+        
+        StartCoroutine(ReloadSceneAfterDelay());
+    }
+
+    
+    IEnumerator ReloadSceneAfterDelay()
+    {
+        
+        yield return new WaitForSecondsRealtime(restartTime);
+        
+        Time.timeScale = 1f; 
+        
+        SceneManager.LoadScene("MainLevel");
     }
 }

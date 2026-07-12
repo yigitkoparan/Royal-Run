@@ -5,6 +5,7 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] obstaclePrefabs;
     [SerializeField] float spawnTime = 1f;
+    [SerializeField] float minObstacleSpawnTime = .2f;
     [SerializeField] Transform obstacleParent;
     [SerializeField] float spawnWidth = 4f;
 
@@ -13,6 +14,16 @@ public class ObstacleSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnObstacleRoutine());
+    }
+
+    public void decreaseObstacleSpawnTime(float amount)
+    {
+        spawnTime -= amount;
+
+        if(spawnTime < minObstacleSpawnTime)
+        {
+            spawnTime = minObstacleSpawnTime;
+        }
     }
 
     IEnumerator SpawnObstacleRoutine()

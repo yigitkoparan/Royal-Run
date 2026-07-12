@@ -33,6 +33,8 @@ public class Chunk : MonoBehaviour
 
     void spawnFences()
     {
+        if(this.CompareTag("Checkpoint")) return;
+
         int fencesToSpawn = Random.Range(0,lanes.Length);
 
         for (int i = 0; i < fencesToSpawn; i++)
